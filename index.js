@@ -3,11 +3,14 @@ const helmet = require('helmet')
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const db = require('./data/dbConfig.js');
+const cors = require('cors');
 
 const server = express();
 
 server.use(express.json());
 server.use(helmet());
+server.use(cors());
+
 
 server.get('/', (req, res) => {
     res.send('Whazzahh!');
